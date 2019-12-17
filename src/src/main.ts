@@ -16,8 +16,23 @@ const material = new THREE.MeshBasicMaterial({
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 camera.position.z = 5;
+let angle = 0.1;
 
-renderer.render(scene, camera);
+class Box {
+    constructor() {
+        
+    }
+}
+
+function loop() {
+    cube.rotateY(angle);
+    renderer.render(scene, camera);
+    requestAnimationFrame(loop);
+}
+
+loop();
+
+
 
 
 const n: number = 5;
